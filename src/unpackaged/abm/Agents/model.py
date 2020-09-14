@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Aug 24 14:18:23 2020
+Created on Wed Aug 28 10:12:12 2020
 
 @author: Student 201386558
 Univeristy of Leeds
@@ -12,7 +12,7 @@ Loops to pass two agents at a time to dstance function
 Plots final postitions on a scatter plot  
 """
 
-import random, matplotlib.pyplot
+import random, matplotlib.pyplot, agentsFramework
 
 # Function to calculates distance between 2 agents passed into function
 def distance_between(agents_row_a, agents_row_b):
