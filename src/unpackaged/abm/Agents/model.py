@@ -12,35 +12,28 @@ Loops to pass two agents at a time to dstance function
 Plots final postitions on a scatter plot  
 """
 
-import random, matplotlib.pyplot, agentsFramework
+import matplotlib.pyplot, agentsFramework
 
-# Function to calculates distance between 2 agents passed into function
+''' Function to calculates distance between 2 agents passed into function '''
 def distance_between(agents_row_a, agents_row_b):
-    distance = (((agents_row_a[0] - agents_row_b[0])**2) + ((agents_row_a[1] - agents_row_b[1])**2))**0.5
+    distance = (((agents_row_a.x - agents_row_b.x)**2) + ((agents_row_a.y - agents_row_b.y)**2))**0.5
     return distance
 
-# Create an empty agent list and 
+# Create an empty agent list and set up user input variables
 num_of_agents = 10
 num_of_iterations = 100
 agents = []
 
-# Create agents 
+# Initialise the Agent object to add each agents position in the empty list 
 for i in range(num_of_agents):
-    agents.append([random.randint(0,99), random.randint(0,99)])
+    agents.append(agentsFramework.Agent())
+    
 
-# Move each agent in turn by one position 100 times 
+# Move each agent in one at a time 100 random positions using the Move method 
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
         #print(j, i)
-        if random.random() < 0.5:
-            agents[i][0] = (agents[i][0] + 1) % 100
-        else:
-            agents[i][0] = (agents[i][0] - 1) % 100
-
-        if random.random() < 0.5:
-            agents[i][1] = (agents[i][1] + 1) % 100
-        else:
-            agents[i][1] = (agents[i][1] - 1) % 100
+        agents[i].move()
 
 # Calculate distance between agents 
 for i in range(num_of_agents):
@@ -50,15 +43,10 @@ for i in range(num_of_agents):
             print(agents[i], agents[j], " are ", distance, "apart")
         else:
             pass
-'''
-print(max(agents, key=operator.itemgetter(1)))
-pythag = (((agents[0][0] - agents[1][0])**2) + ((agents[0][1] - agents[1][1])**2))**0.5
-print(agents[1][1], agents[1][0], agents[0][1], agents[0][0], pythag)
-'''
 
 # Plot the agents positions 
 matplotlib.pyplot.ylim(0, 99)
 matplotlib.pyplot.xlim(0, 99)
 for i in range(num_of_agents):
-    matplotlib.pyplot.scatter(agents[i][1],agents[i][0], color='green')
+    matplotlib.pyplot.scatter(agents[i].x,agents[i].y, color='green')
 matplotlib.pyplot.show()
