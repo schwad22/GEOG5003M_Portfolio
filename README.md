@@ -1,7 +1,7 @@
 # GEOG5003M_Portfolio
  A repository for Practical work carried out on the GEOG5003M Programming for GIA module.
  By Student 201386558
- Univeristy of Leeds
+ University of Leeds
  
 The final programme is contained in the Web_GUI folder. And will animate the movement of 'n number of agents around a set environment whilst they interact with the environment and each other.
 
