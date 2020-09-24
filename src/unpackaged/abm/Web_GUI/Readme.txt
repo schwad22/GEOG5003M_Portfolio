@@ -10,7 +10,7 @@ The programme is run by calling model.py and passing in 3 arguments as text (num
 	Number of agent moves (iterations of move)
 	Size of agents search neighbourhood
 
-No installation is necessary proving the user has Python3 already installed.
+No installation is necessary providing the user has Python3 already installed.
 The programme is run from a GUI that will initiate, and will animate their movement, the programme will run till all iterations have completed,
 or a stopping condition is met, when one agent has collected 100 pieces of the environment. 
 
